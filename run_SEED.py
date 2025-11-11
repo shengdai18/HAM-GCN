@@ -22,11 +22,10 @@ class HyperParameters:
         self.data_format = 'org'
 
         ######## Model Parameters ########
-        self.model = 'LGGNet'
+        self.model = 'ProgressiveMask'
         self.pool = 16
         self.pool_step_rate = 0.25
         self.T = 64
-        self.graph_type = 'fro'  # choices=['fro', 'gen', 'hem', 'BL']
         self.hidden = 32
 
         ######## Reproduce the result using the saved model ######
@@ -38,5 +37,6 @@ if __name__ == '__main__':
     sub_to_run = np.arange(1, args.subjects + 1)
     pd = PrepareData(args)
     pd.run(sub_to_run, split=True, expand=True)
+
 
 
